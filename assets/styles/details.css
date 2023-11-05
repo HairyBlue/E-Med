@@ -1,0 +1,127 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
+  position: relative;
+}
+
+.main__container > span {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}
+.main__doctor--list {
+  display: flex;
+  gap: 50px;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.profile-pic > img {
+  border-radius: 50%;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+}
+
+.profile-info > .name {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}
+.profile-info > .specialist {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+.profile-info > .experience {
+  font-size: var(--fs-md);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.bio > span,
+.details > span {
+  display: inline-block;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.bio > p,
+.details > p {
+  font-size: var(--fs-md);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main__container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    justify-content: start;
+  }
+  .main__container {
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .main__container > span {
+    font-size: var(--fs-md);
+  }
+  .main__doctor--list {
+    flex-direction: column;
+  }
+
+  .main__doctor--list:hover {
+    transform: none;
+  }
+  .profile-info {
+    text-align: center;
+  }
+  .profile-info > .name {
+    font-size: var(--fs-md);
+  }
+  .profile-info > .specialist {
+    font-size: var(--fs-base);
+  }
+  .profile-info > .experience {
+    font-size: var(--fs-base);
+  }
+  .bio, .details {
+    text-align: center;
+  }
+
+  .bio > span,
+  .details > span {
+    font-size: var(--fs-md);
+  }
+  .bio > p,
+  .details > p {
+    font-size: var(--fs-base);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .main__container {
+    width: 100%;
+    gap: 20px;
+  }
+  .main__doctor--list {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,227 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  min-height: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  /* border: 1px solid black; */
+}
+/* Search */
+.main__search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 4px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.main__search > svg {
+  width: 30px;
+  height: 30px;
+}
+.main__search > input {
+  font-size: var(--fs-);
+  width: 100%;
+  height: 30px;
+  border: 0;
+  background-color: transparent;
+}
+.main__search > input:focus {
+  outline: none;
+}
+
+/* Category */
+.main__category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 50%;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.main__category--slide {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  scrollbar-width: none;
+  overflow-x: scroll;
+}
+
+.main__category--slide::-webkit-scrollbar {
+  display: none;
+}
+.main__category > span,
+.main__doctor > span {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.main__category--list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  min-width: 120px;
+  height: 120px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.main__category--list > div {
+  height: 75%;
+}
+.main__category--list:hover {
+  transform: scale(1.05);
+  transition: ease 300ms;
+}
+
+/* Doctor */
+.main__doctor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main__doctor::-webkit-scrollbar {
+  display: none;
+}
+
+.main__doctor--slide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 200px));
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.main__doctor--list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.main__doctor--list:hover {
+  transform: scale(1.05);
+  transition: ease 300ms;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.profile-pic > img {
+  border-radius: 50%;
+}
+
+.profile-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info > .name {
+  font-size: var(--fs-base);
+  font-weight: 600;
+}
+.profile-info > .specialist {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+.profile-info > .experience {
+  font-size: var(--fs-xs);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main__container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 461px) and (max-width: 767px) {
+  .main__container {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main__container {
+    margin-top: 0;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  .main__category--slide {
+    justify-content: start;
+  }
+  .main__doctor {
+    margin-bottom: 60px;
+  }
+  .main__doctor--slide {
+    grid-template-columns: 1fr;
+  }
+  .main__doctor--list {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .main__doctor--list:hover {
+    transform: none;
+  }
+  .profile-info {
+    text-align: start;
+  }
+  .profile-info > .name {
+    font-size: var(--fs-md);
+  }
+  .profile-info > .specialist {
+    font-size: var(--fs-base);
+  }
+  .profile-info > .experience {
+    font-size: var(--fs-base);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .main__container {
+    width: 100%;
+  }
+
+  .main__doctor--list {
+    gap: 20px;
+  }
+  .profile-info > .name {
+    font-size: var(--fs-base);
+  }
+  .profile-info > .specialist {
+    font-size: var(--fs-sm);
+  }
+  .profile-info > .experience {
+    font-size: var(--fs-sm);
+  }
+}
